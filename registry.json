@@ -1,7 +1,7 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry.json",
 	"name": "jalali-calendar",
-	"homepage": "https://github.com/your-username/shadcn-jalali-calendar",
+	"homepage": "https://github.com/javadshoja/shadcn-jalali-calender",
 	"items": [
 		{
 			"name": "jalali-calendar",

@@ -11,59 +11,22 @@ import React, { Suspense, lazy } from 'react'
 const CalendarCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-zinc-950 text-white max-h-[650px]'>
-				<code>{`'use client'
+			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
+				<code>{`import { JalaliCalendar } from '~/components/ui/jalali-calendar'
 
-import * as React from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker } from 'react-day-picker/persian'
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
+export default function Home() {
+ const [date, setDate] = useState<Date | undefined>(new Date())
 
-export type JalaliCalendarProps = React.ComponentProps<typeof DayPicker>
-
-function JalaliCalendar({
-	className,
-	classNames,
-	showOutsideDays = true,
-	...props
-}: JalaliCalendarProps) {
-	return (
-		<DayPicker
-			showOutsideDays={showOutsideDays}
-			className={cn('w-fit p-3', className)}
-			classNames={{
-				month: 'space-y-4',
-				months: 'flex flex-col sm:flex-row space-y-4 sm:space-y-0 relative',
-				month_caption: 'flex justify-center pt-1 relative items-center',
-				month_grid: 'w-full border-collapse space-y-1',
-				caption_label: 'text-sm font-medium',
-				nav: 'flex row-reverse items-center justify-between absolute inset-x-0',
-				button_previous: cn(
-					buttonVariants({ variant: 'outline' }),
-					'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 z-10'
-				),
-				button_next: cn(
-					buttonVariants({ variant: 'outline' }),
-					'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 z-10'
-				),
-				// Other classNames...
-				...classNames
-			}}
-			components={{
-				Chevron: ({ ...props }) =>
-					props.orientation === 'left' ? (
-						<ChevronRight {...props} className='h-4 w-4' />
-					) : (
-						<ChevronLeft {...props} className='h-4 w-4' />
-					)
-			}}
-			{...props}
-		/>
-	)
+ return (
+  <JalaliCalendar
+	 mode='single'
+	 selected={date}
+	 onSelect={setDate}
+	 className='rounded-md border'
+	/>
+ )
 }
-
-export { JalaliCalendar }`}</code>
+`}</code>
 			</pre>
 		)
 	})
@@ -72,7 +35,7 @@ export { JalaliCalendar }`}</code>
 const DatePickerCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-zinc-950 text-white max-h-[650px]'>
+			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
 				<code>{`'use client'
 
 import * as React from 'react'
@@ -122,7 +85,7 @@ export { JalaliDatePicker }`}</code>
 const DatePickerRangeCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-zinc-950 text-white max-h-[650px]'>
+			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
 				<code>{`'use client'
 
 import * as React from 'react'
@@ -214,40 +177,25 @@ export { JalaliDatePickerWithRange }`}</code>
 
 // Loading placeholder component
 const CodeLoadingPlaceholder = () => (
-	<div className='p-4 border rounded-lg bg-zinc-950 animate-pulse h-[400px] w-full'></div>
+	<div className='p-4 border rounded-lg bg-gray-100 dark:bg-zinc-900 animate-pulse h-[400px] w-full'></div>
 )
 
 export default function JalaliCalendarSection() {
 	// Use useEffect to ensure this only runs on the client
-	const [mounted, setMounted] = React.useState(false)
 	const [activeCodeTabs, setActiveCodeTabs] = React.useState({
 		calendar: false,
 		datePicker: false,
 		rangePicker: false
 	})
 
-	React.useEffect(() => {
-		setMounted(true)
-	}, [])
-
-	// Only render the calendar components after client-side hydration
-	if (!mounted) {
-		return (
-			<div className='w-full flex flex-col items-center p-4'>
-				<div className='h-8 w-72 bg-gray-200 rounded-full animate-pulse mb-8'></div>
-				<div className='h-64 w-72 bg-gray-100 rounded-lg animate-pulse'></div>
-			</div>
-		)
-	}
-
 	return (
 		<div className='w-full overflow-y-auto'>
 			<div className='w-full max-w-lg mx-auto'>
 				<Tabs defaultValue='calendar' className='w-full'>
 					<TabsList className='grid w-full grid-cols-3 mb-4'>
-						<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>
-						<TabsTrigger value='date-picker'>انتخاب تاریخ</TabsTrigger>
 						<TabsTrigger value='range-picker'>انتخاب محدوده</TabsTrigger>
+						<TabsTrigger value='date-picker'>انتخاب تاریخ</TabsTrigger>
+						<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>
 					</TabsList>
 
 					<TabsContent
@@ -271,9 +219,22 @@ export default function JalaliCalendarSection() {
 								}
 							}}
 						>
-							<TabsList className='mb-4'>
-								<TabsTrigger value='preview'>Preview</TabsTrigger>
-								<TabsTrigger value='code'>Code</TabsTrigger>
+							<TabsList
+								className='w-full justify-start rounded-none border-b bg-transparent p-0'
+								dir='rtl'
+							>
+								<TabsTrigger
+									value='preview'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									پیش‌نمایش
+								</TabsTrigger>
+								<TabsTrigger
+									value='code'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									کد
+								</TabsTrigger>
 							</TabsList>
 
 							<TabsContent
@@ -319,9 +280,22 @@ export default function JalaliCalendarSection() {
 								}
 							}}
 						>
-							<TabsList className='mb-4'>
-								<TabsTrigger value='preview'>Preview</TabsTrigger>
-								<TabsTrigger value='code'>Code</TabsTrigger>
+							<TabsList
+								className='w-full justify-start rounded-none border-b bg-transparent p-0'
+								dir='rtl'
+							>
+								<TabsTrigger
+									value='preview'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									پیش‌نمایش
+								</TabsTrigger>
+								<TabsTrigger
+									value='code'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									کد
+								</TabsTrigger>
 							</TabsList>
 
 							<TabsContent
@@ -370,9 +344,22 @@ export default function JalaliCalendarSection() {
 								}
 							}}
 						>
-							<TabsList className='mb-4'>
-								<TabsTrigger value='preview'>Preview</TabsTrigger>
-								<TabsTrigger value='code'>Code</TabsTrigger>
+							<TabsList
+								className='w-full justify-start rounded-none border-b bg-transparent p-0'
+								dir='rtl'
+							>
+								<TabsTrigger
+									value='preview'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									پیش‌نمایش
+								</TabsTrigger>
+								<TabsTrigger
+									value='code'
+									className='relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none'
+								>
+									کد
+								</TabsTrigger>
 							</TabsList>
 
 							<TabsContent

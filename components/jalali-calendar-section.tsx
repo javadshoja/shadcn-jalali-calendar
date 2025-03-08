@@ -5,64 +5,93 @@ import { OpenInV0Button } from '@/components/open-in-v0-button'
 import { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'
 import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-date-picker'
 import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { cn } from '@/lib/utils'
 
 export default function JalaliCalendarSection() {
+	// Use useEffect to ensure this only runs on the client
+	const [mounted, setMounted] = React.useState(false)
+
+	React.useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	// Only render the calendar components after client-side hydration
+	if (!mounted) {
+		return (
+			<div className='w-full flex flex-col items-center p-4'>
+				<div className='h-8 w-72 bg-gray-200 rounded-full animate-pulse mb-8'></div>
+				<div className='h-64 w-72 bg-gray-100 rounded-lg animate-pulse'></div>
+			</div>
+		)
+	}
+
 	return (
-		<div className='flex flex-col gap-8'>
-			{/* Calendar Component */}
-			<div className='flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative'>
-				<div className='flex items-center justify-between'>
-					<h2 className='text-sm text-muted-foreground sm:pl-3'>
-						تقویم جلالی (Jalali Calendar)
-					</h2>
-					<OpenInV0Button name='jalali-calendar' className='w-fit' />
-				</div>
-				<div className='flex items-center justify-center min-h-[400px] relative'>
-					<div className='flex flex-col gap-4 items-center justify-center'>
-						<h3 className='text-lg font-medium'>پایه (Basic)</h3>
+		<div className='w-full'>
+			<Tabs defaultValue='calendar' className='w-full max-w-lg mx-auto'>
+				<TabsList className='grid w-full grid-cols-3 mb-8'>
+					<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>
+					<TabsTrigger value='date-picker'>انتخابگر تاریخ</TabsTrigger>
+					<TabsTrigger value='range-picker'>انتخابگر محدوده</TabsTrigger>
+				</TabsList>
+
+				<TabsContent value='calendar' className='flex flex-col items-center'>
+					<div className='flex items-center justify-between w-full mb-4'>
+						<h2 className='text-sm font-medium'>
+							تقویم جلالی (Jalali Calendar)
+						</h2>
+						<OpenInV0Button name='jalali-calendar' className='w-fit' />
+					</div>
+					<div
+						className={cn(
+							'rounded-lg p-4 border',
+							'flex items-center justify-center'
+						)}
+					>
 						<JalaliCalendar />
 					</div>
-				</div>
-			</div>
+				</TabsContent>
 
-			{/* Date Picker Component */}
-			<div className='flex flex-col gap-4 border rounded-lg p-4 min-h-[250px] relative'>
-				<div className='flex items-center justify-between'>
-					<h2 className='text-sm text-muted-foreground sm:pl-3'>
-						انتخابگر تقویم جلالی (Jalali Date Picker)
-					</h2>
-					<OpenInV0Button name='jalali-date-picker' className='w-fit' />
-				</div>
-				<div className='flex items-center justify-center min-h-[200px] relative'>
-					<div className='flex flex-col gap-4 items-center justify-center'>
-						<h3 className='text-lg font-medium'>
-							انتخاب تاریخ (Date Selection)
-						</h3>
+				<TabsContent value='date-picker' className='flex flex-col items-center'>
+					<div className='flex items-center justify-between w-full mb-4'>
+						<h2 className='text-sm font-medium'>
+							انتخابگر تاریخ (Date Picker)
+						</h2>
+						<OpenInV0Button name='jalali-date-picker' className='w-fit' />
+					</div>
+					<div
+						className={cn(
+							'rounded-lg p-4 border',
+							'flex items-center justify-center'
+						)}
+					>
 						<JalaliDatePicker />
 					</div>
-				</div>
-			</div>
+				</TabsContent>
 
-			{/* Date Range Picker Component */}
-			<div className='flex flex-col gap-4 border rounded-lg p-4 min-h-[250px] relative'>
-				<div className='flex items-center justify-between'>
-					<h2 className='text-sm text-muted-foreground sm:pl-3'>
-						انتخابگر محدوده تقویم جلالی (Jalali Date Range Picker)
-					</h2>
-					<OpenInV0Button
-						name='jalali-date-picker-with-range'
-						className='w-fit'
-					/>
-				</div>
-				<div className='flex items-center justify-center min-h-[200px] relative'>
-					<div className='flex flex-col gap-4 items-center justify-center'>
-						<h3 className='text-lg font-medium'>
-							انتخاب محدوده تقویم (Date Range Selection)
-						</h3>
+				<TabsContent
+					value='range-picker'
+					className='flex flex-col items-center'
+				>
+					<div className='flex items-center justify-between w-full mb-4'>
+						<h2 className='text-sm font-medium'>
+							انتخابگر محدوده (Range Picker)
+						</h2>
+						<OpenInV0Button
+							name='jalali-date-picker-with-range'
+							className='w-fit'
+						/>
+					</div>
+					<div
+						className={cn(
+							'rounded-lg p-4 border',
+							'flex items-center justify-center'
+						)}
+					>
 						<JalaliDatePickerWithRange />
 					</div>
-				</div>
-			</div>
+				</TabsContent>
+			</Tabs>
 		</div>
 	)
 }

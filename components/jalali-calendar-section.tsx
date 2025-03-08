@@ -6,9 +6,7 @@ import { cn } from '@/lib/utils'
 import { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'
 import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
 import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-date-picker'
-import { Button } from '@/components/ui/button'
 import React, { Suspense, lazy } from 'react'
-
 // Lazy-loaded code content components to improve performance
 const CalendarCode = lazy(() =>
 	Promise.resolve({

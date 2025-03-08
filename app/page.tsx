@@ -1,4 +1,3 @@
-import localFont from 'next/font/local'
 import JalaliCalendarSection from '@/components/jalali-calendar-section'
 import ThemeMenuButton from '@/components/theme-menu-button'
 import GridPattern from '@/components/ui/grid-pattern'

@@ -5,8 +5,8 @@
   "title": "Jalali Date Picker",
   "description": "A Persian/Jalali date picker component with popover.",
   "dependencies": [
-    "date-fns-jalali",
-    "react-day-picker"
+    "date-fns-jalali@latest",
+    "react-day-picker@latest"
   ],
   "registryDependencies": [
     "button",

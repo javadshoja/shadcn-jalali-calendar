@@ -5,8 +5,8 @@
   "title": "Jalali Calendar",
   "description": "A Persian/Jalali calendar component based on react-day-picker.",
   "dependencies": [
-    "date-fns-jalali",
-    "react-day-picker"
+    "date-fns-jalali@latest",
+    "react-day-picker@latest"
   ],
   "registryDependencies": [
     "button"

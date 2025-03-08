@@ -7,6 +7,7 @@ import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-
 import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
+import { Info } from 'lucide-react'
 
 export default function JalaliCalendarSection() {
 	// Use useEffect to ensure this only runs on the client
@@ -29,11 +30,18 @@ export default function JalaliCalendarSection() {
 	return (
 		<div className='w-full'>
 			<Tabs defaultValue='calendar' className='w-full max-w-lg mx-auto'>
-				<TabsList className='grid w-full grid-cols-3 mb-8'>
-					<TabsTrigger value='range-picker'>انتخاب محدوده</TabsTrigger>
-					<TabsTrigger value='date-picker'>انتخاب تاریخ</TabsTrigger>
+				<TabsList className='grid w-full grid-cols-3 mb-4'>
 					<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>
+					<TabsTrigger value='date-picker'>انتخابگر تاریخ</TabsTrigger>
+					<TabsTrigger value='range-picker'>انتخابگر محدوده</TabsTrigger>
 				</TabsList>
+
+				<div className='text-xs text-muted-foreground mb-4 flex items-center gap-2'>
+					<Info className='h-3 w-3' />
+					<span>
+						These components require react-day-picker@latest and date-fns-jalali
+					</span>
+				</div>
 
 				<TabsContent value='calendar' className='flex flex-col items-center'>
 					<div className='flex items-center justify-between w-full mb-4'>

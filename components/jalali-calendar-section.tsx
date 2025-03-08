@@ -30,17 +30,17 @@ export default function JalaliCalendarSection() {
 		<div className='w-full'>
 			<Tabs defaultValue='calendar' className='w-full max-w-lg mx-auto'>
 				<TabsList className='grid w-full grid-cols-3 mb-8'>
+					<TabsTrigger value='range-picker'>انتخاب محدوده</TabsTrigger>
+					<TabsTrigger value='date-picker'>انتخاب تاریخ</TabsTrigger>
 					<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>
-					<TabsTrigger value='date-picker'>انتخابگر تاریخ</TabsTrigger>
-					<TabsTrigger value='range-picker'>انتخابگر محدوده</TabsTrigger>
 				</TabsList>
 
 				<TabsContent value='calendar' className='flex flex-col items-center'>
 					<div className='flex items-center justify-between w-full mb-4'>
+						<OpenInV0Button name='jalali-calendar' className='w-fit' />
 						<h2 className='text-sm font-medium'>
 							تقویم جلالی (Jalali Calendar)
 						</h2>
-						<OpenInV0Button name='jalali-calendar' className='w-fit' />
 					</div>
 					<div
 						className={cn(
@@ -54,10 +54,8 @@ export default function JalaliCalendarSection() {
 
 				<TabsContent value='date-picker' className='flex flex-col items-center'>
 					<div className='flex items-center justify-between w-full mb-4'>
-						<h2 className='text-sm font-medium'>
-							انتخابگر تاریخ (Date Picker)
-						</h2>
 						<OpenInV0Button name='jalali-date-picker' className='w-fit' />
+						<h2 className='text-sm font-medium'>انتخاب تاریخ (Date Picker)</h2>
 					</div>
 					<div
 						className={cn(
@@ -74,13 +72,13 @@ export default function JalaliCalendarSection() {
 					className='flex flex-col items-center'
 				>
 					<div className='flex items-center justify-between w-full mb-4'>
-						<h2 className='text-sm font-medium'>
-							انتخابگر محدوده (Range Picker)
-						</h2>
 						<OpenInV0Button
 							name='jalali-date-picker-with-range'
 							className='w-fit'
 						/>
+						<h2 className='text-sm font-medium'>
+							انتخاب محدوده (Range Picker)
+						</h2>
 					</div>
 					<div
 						className={cn(

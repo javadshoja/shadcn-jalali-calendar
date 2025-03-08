@@ -2,7 +2,7 @@ import JalaliCalendarSection from '@/components/jalali-calendar-section'
 import ThemeMenuButton from '@/components/theme-menu-button'
 import GridPattern from '@/components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
-import { ArrowDownToLine } from 'lucide-react'
+import { ArrowDownToLine, Info } from 'lucide-react'
 
 // You can add this font later or use a Google font alternative
 const calSans = { className: 'font-bold' }
@@ -50,18 +50,15 @@ export default function Home() {
 							shadcn/ui
 						</span>
 					</p>
-
-					<div className='mb-8 p-3 border border-amber-200 bg-amber-50 dark:bg-amber-950 dark:border-amber-900 rounded-md text-amber-800 dark:text-amber-200 text-xs max-w-md'>
-						<div className='flex items-center gap-2'>
-							<ArrowDownToLine className='h-4 w-4 flex-shrink-0' />
-							<p>
-								<strong>Important:</strong> Please install the latest version of
-								react-day-picker for these components to work properly:
-								<code className='block mt-1 bg-amber-100 dark:bg-amber-900 p-1 rounded'>
-									pnpm add react-day-picker@latest date-fns-jalali
-								</code>
-							</p>
-						</div>
+					<div
+						className='text-xs text-muted-foreground mb-4 flex gap-2'
+						dir='rtl'
+					>
+						<Info className='h-3 w-3' />
+						<span>
+							قبل از استفاده از نصب بودن دو تا پکیج react-day-picker@latest و
+							date-fns-jalali مطمئن بشید.
+						</span>
 					</div>
 
 					{/* Calendar components section */}
@@ -73,23 +70,32 @@ export default function Home() {
 
 			<footer className='fixed bottom-4 left-1/2 w-screen -translate-x-1/2'>
 				<p className='text-center text-sm text-muted-foreground'>
-					ساخته شده با{' '}
+					ساخته شده توسط{' '}
 					<a
-						href='https://ui.shadcn.com'
+						href='https://jbrave.ir/'
 						target='_blank'
 						rel='noreferrer'
 						className='font-medium underline underline-offset-4'
 					>
-						shadcn/ui
-					</a>
-					. کد منبع در{' '}
+						javadshoja
+					</a>{' '}
+					کد منبع در{' '}
 					<a
-						href='https://github.com/your-username/shadcn-jalali-calendar'
+						href='https://github.com/javadshoja/shadcn-jalali-calender'
 						target='_blank'
 						rel='noreferrer'
 						className='font-medium underline underline-offset-4'
 					>
 						GitHub
+					</a>{' '}
+					با الهام از سایت{' '}
+					<a
+						href='https://linguatime.nainglinnkhant.com/'
+						target='_blank'
+						rel='noreferrer'
+						className='font-medium underline underline-offset-4'
+					>
+						Lingua Time
 					</a>
 				</p>
 			</footer>

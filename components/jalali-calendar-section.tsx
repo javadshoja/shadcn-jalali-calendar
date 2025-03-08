@@ -1,13 +1,12 @@
 'use client'
 
-import React from 'react'
 import { OpenInV0Button } from '@/components/open-in-v0-button'
-import { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'
-import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-date-picker'
-import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
-import { Info } from 'lucide-react'
+import { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'
+import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
+import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-date-picker'
+import React from 'react'
 
 export default function JalaliCalendarSection() {
 	// Use useEffect to ensure this only runs on the client
@@ -35,13 +34,6 @@ export default function JalaliCalendarSection() {
 					<TabsTrigger value='date-picker'>انتخابگر تاریخ</TabsTrigger>
 					<TabsTrigger value='range-picker'>انتخابگر محدوده</TabsTrigger>
 				</TabsList>
-
-				<div className='text-xs text-muted-foreground mb-4 flex items-center gap-2'>
-					<Info className='h-3 w-3' />
-					<span>
-						These components require react-day-picker@latest and date-fns-jalali
-					</span>
-				</div>
 
 				<TabsContent value='calendar' className='flex flex-col items-center'>
 					<div className='flex items-center justify-between w-full mb-4'>

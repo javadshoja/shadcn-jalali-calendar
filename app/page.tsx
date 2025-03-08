@@ -32,7 +32,7 @@ export default function Home() {
 					)}
 				/>
 				<ThemeMenuButton className='fixed right-[5vw] top-5 flex-1 md:right-5' />
-				<div className='z-10 flex w-full flex-col items-center rounded-lg border px-5 py-8 backdrop-blur-md supports-[backdrop-filter]:bg-background/40 sm:py-12'>
+				<div className='z-10 flex w-full flex-col items-center rounded-lg border px-5  backdrop-blur-md supports-[backdrop-filter]:bg-background/40 py-2 sm:py-4'>
 					<h1
 						className={cn(
 							'mb-3 w-full text-3xl font-bold text-center sm:w-96',

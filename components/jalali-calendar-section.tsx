@@ -243,8 +243,8 @@ export default function JalaliCalendarSection() {
 	}
 
 	return (
-		<div className='w-full h-screen overflow-y-auto'>
-			<div className='w-full max-w-lg mx-auto pb-8'>
+		<div className='w-full overflow-y-auto'>
+			<div className='w-full max-w-lg mx-auto'>
 				<Tabs defaultValue='calendar' className='w-full'>
 					<TabsList className='grid w-full grid-cols-3 mb-4'>
 						<TabsTrigger value='calendar'>تقویم پایه</TabsTrigger>

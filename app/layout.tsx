@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Vazirmatn } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import './globals.css'
 
@@ -11,6 +11,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
 	subsets: ['latin']
+})
+
+const vazirmatn = Vazirmatn({
+	variable: '--font-vazirmatn',
+	subsets: ['arabic']
 })
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang='fa' dir='rtl' suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable} ${vazirmatn.className} antialiased`}
 				suppressHydrationWarning
 			>
 				<Providers>{children}</Providers>

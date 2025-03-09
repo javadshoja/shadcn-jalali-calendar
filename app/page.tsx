@@ -4,9 +4,6 @@ import GridPattern from '@/components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
 import { Info } from 'lucide-react'
 
-// You can add this font later or use a Google font alternative
-const calSans = { className: 'font-bold' }
-
 export default function Home() {
 	return (
 		<>
@@ -33,37 +30,36 @@ export default function Home() {
 				/>
 				<ThemeMenuButton className='fixed right-[5vw] top-5 flex-1 md:right-5' />
 				<div className='z-10 flex w-full flex-col items-center rounded-lg border px-5  backdrop-blur-md supports-[backdrop-filter]:bg-background/40 py-2 sm:py-4'>
-					<h1
-						className={cn(
-							'mb-3 w-full text-3xl font-bold text-center sm:w-96',
-							calSans.className
-						)}
-					>
-						تقویم جلالی
-						<span className='block text-lg mt-1'>Jalali Calendar</span>
-					</h1>
-					<p className='mb-4 w-full text-center text-sm sm:w-96'>
-						کامپوننت‌های تقویم جلالی برای استفاده در پروژه‌های ری‌اکت و
-						نکست‌جی‌اس
-						<span className='block mt-1'>
-							Jalali (Persian) calendar components for React and Next.js using
-							shadcn/ui
-						</span>
-					</p>
-					<div
-						className='text-xs text-muted-foreground mb-4 flex gap-2'
-						dir='rtl'
-					>
-						<Info className='h-3 w-3' />
-						<span>
-							قبل از استفاده از نصب بودن دو تا پکیج react-day-picker@latest و
-							date-fns-jalali مطمئن بشید.
-						</span>
-					</div>
+					<div className='grid grid-cols-2 gap-4 h-[600px]'>
+						<div className='flex items-start flex-col py-2'>
+							<h1 className='mb-3 w-full text-3xl font-bold text-center sm:w-96'>
+								تقویم جلالی
+								<span className='block text-lg mt-1'>Jalali Calendar</span>
+							</h1>
+							<p className='mb-4 w-full text-center text-sm sm:w-96'>
+								کامپوننت‌های تقویم جلالی برای استفاده در پروژه‌های ری‌اکت و
+								نکست‌جی‌اس
+								<span className='block mt-1'>
+									Jalali (Persian) calendar components for React and Next.js
+									using shadcn/ui
+								</span>
+							</p>
+							<div
+								className='text-xs text-muted-foreground mb-4 flex gap-2'
+								dir='rtl'
+							>
+								<Info className='h-3 w-3' />
+								<span>
+									قبل از استفاده از نصب بودن دو پکیج react-day-picker@latest و
+									date-fns-jalali مطمئن بشید.
+								</span>
+							</div>
+						</div>
 
-					{/* Calendar components section */}
-					<div className='w-full'>
-						<JalaliCalendarSection />
+						{/* Calendar components section */}
+						<div className='w-full'>
+							<JalaliCalendarSection />
+						</div>
 					</div>
 				</div>
 			</main>

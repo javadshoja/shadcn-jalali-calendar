@@ -34,20 +34,20 @@ export default function ThemeMenuButton({ className }: ThemeMenuButtonProps) {
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => setTheme('light')}>
-					<Sun className='mr-2 h-4 w-4' />
+				<DropdownMenuItem onClick={() => setTheme('light')} dir='rtl'>
+					<Sun className='ml-2 h-4 w-4' />
 					<span>روشن</span>
-					{theme === 'light' && <Check className='mr-auto h-4 w-4' />}
+					{theme === 'light' && <Check className='ml-auto h-4 w-4' />}
 				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('dark')}>
-					<Moon className='mr-2 h-4 w-4' />
+				<DropdownMenuItem onClick={() => setTheme('dark')} dir='rtl'>
+					<Moon className='ml-2 h-4 w-4' />
 					<span>تیره</span>
-					{theme === 'dark' && <Check className='mr-auto h-4 w-4' />}
+					{theme === 'dark' && <Check className='ml-auto h-4 w-4' />}
 				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('system')}>
-					<span className='mr-2'>💻</span>
+				<DropdownMenuItem onClick={() => setTheme('system')} dir='rtl'>
+					<span className='ml-2'>💻</span>
 					<span>سیستم</span>
-					{theme === 'system' && <Check className='mr-auto h-4 w-4' />}
+					{theme === 'system' && <Check className='ml-auto h-4 w-4' />}
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>

@@ -11,7 +11,7 @@ import React, { Suspense, lazy } from 'react'
 const CalendarCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
+			<pre className='p-4 max-h-[400px] border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50'>
 				<code>{`import { JalaliCalendar } from '~/components/ui/jalali-calendar'
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
 const DatePickerCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
+			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[400px]'>
 				<code>{`'use client'
 
 import * as React from 'react'
@@ -85,7 +85,7 @@ export { JalaliDatePicker }`}</code>
 const DatePickerRangeCode = lazy(() =>
 	Promise.resolve({
 		default: () => (
-			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[650px]'>
+			<pre className='p-4 border rounded-lg overflow-auto text-sm bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-50 max-h-[400px]'>
 				<code>{`'use client'
 
 import * as React from 'react'

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense } from 'react'
 import { ShikiCodeBlock } from '@/components/ui/shiki-code-block'
 
 // Loading placeholder component
@@ -16,25 +16,11 @@ interface CodeBlockProps {
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({
 	code,
-	language = 'tsx',
-	isActive
+	language = 'tsx'
 }) => {
-	const [shouldRender, setShouldRender] = useState(isActive)
-
-	// Only render the code block if it's active or has been active before
-	useEffect(() => {
-		if (isActive && !shouldRender) {
-			setShouldRender(true)
-		}
-	}, [isActive, shouldRender])
-
-	if (!shouldRender) {
-		return null
-	}
-
 	return (
 		<Suspense fallback={<CodeLoadingPlaceholder />}>
-			{isActive && <ShikiCodeBlock language={language} code={code} />}
+			<ShikiCodeBlock language={language} code={code} />
 		</Suspense>
 	)
 }

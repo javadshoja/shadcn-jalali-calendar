@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { OpenInV0Button } from '@/components/open-in-v0-button'
 import { cn } from '@/lib/utils'
 import { InstallationSection } from './installation-section'
+import { CodeBlock } from './code-block'
 
 interface ComponentPreviewProps {
 	componentName: string
@@ -68,16 +69,7 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 
 				<TabsContent value='code' className='flex flex-col'>
 					{/* We'll use a dynamic import for the code content */}
-					<div className='relative mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900'>
-						<pre className='px-4 py-5 overflow-auto'>
-							<code
-								className='relative font-mono text-sm leading-none text-zinc-50'
-								data-language='tsx'
-							>
-								{codeContent}
-							</code>
-						</pre>
-					</div>
+					<CodeBlock code={codeContent} language='tsx' isActive={true} />
 				</TabsContent>
 			</Tabs>
 		</div>

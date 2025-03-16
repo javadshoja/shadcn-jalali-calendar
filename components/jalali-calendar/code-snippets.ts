@@ -83,7 +83,7 @@ import { CalendarIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { JalaliCalendar } from '@/components/ui/jalali-calendar'
+import { JalaliCalendar } from '@/components/jalali-calendar'
 import {
 	Popover,
 	PopoverContent,
@@ -126,7 +126,7 @@ import { addDays, format } from 'date-fns-jalali'
 import { CalendarIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { JalaliCalendar } from '@/components/ui/jalali-calendar'
+import { JalaliCalendar } from '@/components/jalali-calendar'
 import {
 	Popover,
 	PopoverContent,

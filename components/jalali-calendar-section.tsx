@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { cn } from '@/lib/utils'
 import { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'
 import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'
 import { JalaliDatePicker } from '@/registry/new-york/jalali-date-picker/jalali-date-picker'

@@ -14,20 +14,6 @@ function JalaliCalendar({
 	showOutsideDays = true,
 	...props
 }: JalaliCalendarProps) {
-	// Use useEffect to ensure client-side hydration
-	const [mounted, setMounted] = React.useState(false)
-
-	React.useEffect(() => {
-		setMounted(true)
-	}, [])
-
-	// Use a placeholder if not mounted yet
-	if (!mounted) {
-		return (
-			<div className='w-fit p-3 min-h-[300px] min-w-[300px] bg-gray-100 animate-pulse rounded' />
-		)
-	}
-
 	return (
 		<DayPicker
 			showOutsideDays={showOutsideDays}

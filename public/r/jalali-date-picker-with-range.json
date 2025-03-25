@@ -11,7 +11,7 @@
   "registryDependencies": [
     "button",
     "popover",
-    "jalali-calendar"
+    "calendar.jbrave.ir/r/jalali-calendar.json"
   ],
   "files": [
     {

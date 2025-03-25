@@ -30,8 +30,8 @@ export default function Home() {
 				/>
 				<ThemeMenuButton className='fixed right-[5vw] top-5 flex-1 md:right-5' />
 				<div className='z-10 flex w-full flex-col items-center rounded-lg border px-5  backdrop-blur-md supports-[backdrop-filter]:bg-background/40 py-2 sm:py-4'>
-					<div className='grid grid-cols-2 gap-4 h-[600px]'>
-						<div className='flex items-start flex-col py-2'>
+					<div className='grid grid-cols-2 gap-4 h-[600px] w-full'>
+						<div className='flex items-start flex-col py-2 w-full'>
 							<h1 className='mb-3 w-full text-3xl font-bold text-center sm:w-96'>
 								تقویم جلالی
 								<span className='block text-lg mt-1'>Jalali Calendar</span>
@@ -44,16 +44,6 @@ export default function Home() {
 									using shadcn/ui
 								</span>
 							</p>
-							<div
-								className='text-xs text-muted-foreground mb-4 flex gap-2'
-								dir='rtl'
-							>
-								<Info className='h-3 w-3' />
-								<span>
-									قبل از استفاده از نصب بودن دو پکیج react-day-picker@latest و
-									date-fns-jalali مطمئن بشید.
-								</span>
-							</div>
 						</div>
 
 						{/* Calendar components section */}

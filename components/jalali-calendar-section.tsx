@@ -12,6 +12,7 @@ import {
 	DATE_PICKER_CODE,
 	DATE_PICKER_RANGE_CODE
 } from './jalali-calendar/code-snippets'
+import { Info } from 'lucide-react'
 
 export default function JalaliCalendarSection() {
 	return (
@@ -25,6 +26,18 @@ export default function JalaliCalendarSection() {
 							componentName='jalali-calendar'
 							title='(Jalali Calendar) تقویم جلالی'
 							codeContent={CALENDAR_CODE}
+							codeDescription={
+								<div
+									className='text-xs text-muted-foreground mb-4 flex gap-2'
+									dir='rtl'
+								>
+									<Info className='h-3 w-3' />
+									<span>
+										قبل از استفاده از نصب بودن دو پکیج react-day-picker@latest و
+										date-fns-jalali مطمئن بشید.
+									</span>
+								</div>
+							}
 							previewComponent={<JalaliCalendar />}
 						/>
 
@@ -33,6 +46,15 @@ export default function JalaliCalendarSection() {
 							componentName='jalali-date-picker'
 							title='(Date Picker) انتخاب تاریخ'
 							codeContent={DATE_PICKER_CODE}
+							codeDescription={
+								<div
+									className='text-xs text-muted-foreground mb-4 flex gap-2'
+									dir='rtl'
+								>
+									<Info className='h-3 w-3' />
+									<span>قبل از استفاده تقویم پایه را نصب کنید</span>
+								</div>
+							}
 							previewComponent={<JalaliDatePicker />}
 						/>
 
@@ -41,6 +63,15 @@ export default function JalaliCalendarSection() {
 							componentName='jalali-date-picker-with-range'
 							title='(Range Picker) انتخاب محدوده'
 							codeContent={DATE_PICKER_RANGE_CODE}
+							codeDescription={
+								<div
+									className='text-xs text-muted-foreground mb-4 flex gap-2'
+									dir='rtl'
+								>
+									<Info className='h-3 w-3' />
+									<span>قبل از استفاده تقویم پایه را نصب کنید</span>
+								</div>
+							}
 							previewComponent={<JalaliDatePickerWithRange />}
 						/>
 					</JalaliTabs>

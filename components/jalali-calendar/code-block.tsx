@@ -11,7 +11,6 @@ const CodeLoadingPlaceholder = () => (
 interface CodeBlockProps {
 	code: string
 	language?: string
-	isActive: boolean
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({

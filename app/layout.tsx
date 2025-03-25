@@ -19,7 +19,7 @@ const vazirmatn = Vazirmatn({
 })
 
 export const metadata: Metadata = {
-	title: 'Jalali Calendar Components - shadcn/ui Registry',
+	title: 'تقویم جلالی - shadcn/ui',
 	description: 'Jalali (Persian) Calendar Components powered by shadcn/ui'
 }
 

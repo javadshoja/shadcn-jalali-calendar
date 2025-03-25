@@ -11,6 +11,7 @@ interface ComponentPreviewProps {
 	componentName: string
 	title: string
 	codeContent: string
+	codeDescription?: ReactNode
 	previewComponent: ReactNode
 }
 
@@ -18,6 +19,7 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 	componentName,
 	title,
 	codeContent,
+	codeDescription,
 	previewComponent
 }) => {
 	return (
@@ -68,8 +70,10 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 				</TabsContent>
 
 				<TabsContent value='code' className='flex flex-col'>
+					{codeDescription}
+
 					{/* We'll use a dynamic import for the code content */}
-					<CodeBlock code={codeContent} language='tsx' isActive={true} />
+					<CodeBlock code={codeContent} language='tsx' />
 				</TabsContent>
 			</Tabs>
 		</div>

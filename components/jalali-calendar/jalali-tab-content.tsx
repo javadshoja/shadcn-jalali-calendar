@@ -7,6 +7,7 @@ interface JalaliTabContentProps {
 	componentName: string
 	title: string
 	codeContent: string
+	codeDescription?: React.ReactNode
 	previewComponent: React.ReactNode
 }
 
@@ -15,6 +16,7 @@ export function JalaliTabContent({
 	componentName,
 	title,
 	codeContent,
+	codeDescription,
 	previewComponent
 }: JalaliTabContentProps) {
 	return (
@@ -23,6 +25,7 @@ export function JalaliTabContent({
 				componentName={componentName}
 				title={title}
 				codeContent={codeContent}
+				codeDescription={codeDescription}
 				previewComponent={previewComponent}
 			/>
 		</TabsContent>

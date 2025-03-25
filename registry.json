@@ -12,8 +12,14 @@
 			"registryDependencies": ["button"],
 			"files": [
 				{
+					"path": "registry/new-york/jalali-calendar/page.tsx",
+					"type": "registry:page",
+					"target": "app/page.tsx"
+				},
+				{
 					"path": "registry/new-york/jalali-calendar/jalali-calendar.tsx",
-					"type": "registry:component"
+					"type": "registry:component",
+					"target": ""
 				}
 			]
 		},
@@ -26,8 +32,14 @@
 			"registryDependencies": ["button", "popover", "jalali-calendar"],
 			"files": [
 				{
+					"path": "registry/new-york/jalali-date-picker/page.tsx",
+					"type": "registry:page",
+					"target": "app/page.tsx"
+				},
+				{
 					"path": "registry/new-york/jalali-date-picker/jalali-date-picker.tsx",
-					"type": "registry:component"
+					"type": "registry:component",
+					"target": ""
 				}
 			]
 		},
@@ -40,8 +52,14 @@
 			"registryDependencies": ["button", "popover", "jalali-calendar"],
 			"files": [
 				{
+					"path": "registry/new-york/jalali-date-picker-with-range/page.tsx",
+					"type": "registry:page",
+					"target": "app/page.tsx"
+				},
+				{
 					"path": "registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range.tsx",
-					"type": "registry:component"
+					"type": "registry:component",
+					"target": ""
 				}
 			]
 		}

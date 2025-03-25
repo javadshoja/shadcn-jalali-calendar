@@ -2,7 +2,6 @@ import JalaliCalendarSection from '@/components/jalali-calendar-section'
 import ThemeMenuButton from '@/components/theme-menu-button'
 import GridPattern from '@/components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
-import { Info } from 'lucide-react'
 
 export default function Home() {
 	return (

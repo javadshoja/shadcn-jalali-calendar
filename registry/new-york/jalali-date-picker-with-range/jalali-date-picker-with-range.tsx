@@ -12,20 +12,12 @@ import {
 	PopoverTrigger
 } from '@/components/ui/popover'
 
-// Simple interface for our component without relying on external type
-interface MyDateRange {
-	from: Date
-	to?: Date | undefined
-}
-
 const JalaliDatePickerWithRange = ({
 	className
 }: React.HTMLAttributes<HTMLDivElement>) => {
 	// Use a simpler approach to state to avoid type issues
 	const [fromDate, setFromDate] = React.useState<Date | undefined>(undefined)
 	const [toDate, setToDate] = React.useState<Date | undefined>(undefined)
-	// Use useEffect to ensure client-side hydration
-	const [mounted, setMounted] = React.useState(false)
 
 	React.useEffect(() => {
 		// Initialize dates only on the client side
@@ -35,15 +27,7 @@ const JalaliDatePickerWithRange = ({
 		if (!toDate) {
 			setToDate(addDays(new Date(), 20))
 		}
-		setMounted(true)
 	}, [fromDate, toDate])
-
-	// Use a placeholder if not mounted yet
-	if (!mounted) {
-		return (
-			<div className='w-full h-10 max-w-[300px] bg-gray-100 animate-pulse rounded' />
-		)
-	}
 
 	// Construct our date range object
 	const dateRange = fromDate

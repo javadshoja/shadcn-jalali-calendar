@@ -12,11 +12,6 @@
 			"registryDependencies": ["button"],
 			"files": [
 				{
-					"path": "registry/new-york/jalali-calendar/page.tsx",
-					"type": "registry:page",
-					"target": "app/page.tsx"
-				},
-				{
 					"path": "registry/new-york/jalali-calendar/jalali-calendar.tsx",
 					"type": "registry:component",
 					"target": ""

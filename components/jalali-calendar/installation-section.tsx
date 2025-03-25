@@ -47,7 +47,7 @@ export const InstallationSection: React.FC<InstallationSectionProps> = ({
 	}
 
 	return (
-		<div className='relative mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 dark:bg-zinc-900'>
+		<div className='relative mt-6 max-h-[650px] rounded-xl bg-zinc-950 dark:bg-zinc-900'>
 			<Tabs
 				value={packageManager}
 				onValueChange={value => {

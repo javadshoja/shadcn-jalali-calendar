@@ -54,8 +54,8 @@ export const InstallationSection: React.FC<InstallationSectionProps> = ({
 					setPackageManager(value as 'pnpm' | 'npm' | 'yarn' | 'bun')
 				}}
 			>
-				<div className='flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-3 pt-2.5'>
-					<TabsList className='h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1'>
+				<div className='flex items-end justify-between border-b mt-2 border-zinc-800 bg-zinc-900 px-3 '>
+					<TabsList className='h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1 '>
 						{Object.entries(commands).map(([key]) => (
 							<TabsTrigger
 								key={key}
@@ -69,9 +69,9 @@ export const InstallationSection: React.FC<InstallationSectionProps> = ({
 				</div>
 				{Object.entries(commands).map(([key, value]) => (
 					<TabsContent key={key} value={key} className='mt-0'>
-						<pre className='px-4 py-5'>
+						<pre className='px-4 py-5 w-32 sm:w-full'>
 							<code
-								className='relative font-mono text-sm leading-none text-zinc-50'
+								className='relative font-mono text-sm leading-none text-zinc-50 '
 								data-language='bash'
 							>
 								{value}

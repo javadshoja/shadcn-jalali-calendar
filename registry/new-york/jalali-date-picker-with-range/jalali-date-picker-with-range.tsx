@@ -11,6 +11,7 @@ import {
 	PopoverContent,
 	PopoverTrigger
 } from '@/components/ui/popover'
+import { DateRange } from 'react-day-picker'
 
 const JalaliDatePickerWithRange = ({
 	className
@@ -38,7 +39,7 @@ const JalaliDatePickerWithRange = ({
 		: undefined
 
 	// Handle selection from the calendar
-	const handleSelect = (range: any) => {
+	const handleSelect = (range: DateRange) => {
 		if (range?.from) setFromDate(range.from)
 		if (range?.to) setToDate(range.to)
 		else if (range?.from && !range.to) setToDate(undefined)
@@ -53,7 +54,7 @@ const JalaliDatePickerWithRange = ({
 						dir='rtl'
 						variant='outline'
 						className={cn(
-							'w-[300px] justify-start text-left font-normal',
+							'justify-start text-left font-normal',
 							!fromDate && 'text-muted-foreground'
 						)}
 					>
@@ -61,7 +62,7 @@ const JalaliDatePickerWithRange = ({
 						{fromDate ? (
 							toDate ? (
 								<>
-									{format(fromDate, 'dd LLLL y')} -{' '}
+									{format(fromDate, 'dd LLLL y')} - ``
 									{format(toDate, 'dd LLLL y')}
 								</>
 							) : (
@@ -79,6 +80,7 @@ const JalaliDatePickerWithRange = ({
 						selected={dateRange}
 						onSelect={handleSelect}
 						numberOfMonths={2}
+						required
 					/>
 				</PopoverContent>
 			</Popover>

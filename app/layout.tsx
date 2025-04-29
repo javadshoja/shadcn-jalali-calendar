@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang='fa' dir='rtl' suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable} ${vazirmatn.className} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable} ${vazirmatn.className} antialiased h-screen overflow-scroll`}
 				suppressHydrationWarning
 			>
 				<Providers>{children}</Providers>

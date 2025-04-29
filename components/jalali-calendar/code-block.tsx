@@ -19,7 +19,11 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
 }) => {
 	return (
 		<Suspense fallback={<CodeLoadingPlaceholder />}>
-			<ShikiCodeBlock language={language} code={code} />
+			<ShikiCodeBlock
+				language={language}
+				code={code}
+				className='w-72 sm:w-full'
+			/>
 		</Suspense>
 	)
 }

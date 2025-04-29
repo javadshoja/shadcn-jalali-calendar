@@ -62,7 +62,7 @@ const JalaliDatePickerWithRange = ({
 						{fromDate ? (
 							toDate ? (
 								<>
-									{format(fromDate, 'dd LLLL y')} - ``
+									{format(fromDate, 'dd LLLL y')} -{' '}
 									{format(toDate, 'dd LLLL y')}
 								</>
 							) : (

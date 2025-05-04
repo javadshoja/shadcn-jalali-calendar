@@ -31,10 +31,14 @@ export default function RootLayout({
 	return (
 		<html lang='fa' dir='rtl' suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable} ${vazirmatn.className} antialiased h-screen overflow-scroll`}
+				className={`${geistSans.variable} ${geistMono.variable} ${vazirmatn.variable} ${vazirmatn.className} antialiased`}
 				suppressHydrationWarning
 			>
-				<Providers>{children}</Providers>
+				<Providers>
+					<div className='transition-property: transform, border-radius; transition-duration: 0.5s; transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);'>
+						{children}
+					</div>
+				</Providers>
 			</body>
 		</html>
 	)

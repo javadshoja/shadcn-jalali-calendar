@@ -58,6 +58,18 @@ These components depend on the following:
 
 Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation on creating and using registries.
 
+## Contributers
+<a href="https://github.com/javadshoja/shadcn-jalali-calendar/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=javadshoja/shadcn-jalali-calendar" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
+### Intrested in contributing?
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

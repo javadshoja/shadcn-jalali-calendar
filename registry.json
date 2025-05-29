@@ -19,7 +19,46 @@
 			]
 		},
 		{
+			"name": "jalali-calendar-v0",
+			"type": "registry:component",
+			"title": "Jalali Calendar",
+			"description": "A Persian/Jalali calendar component based on react-day-picker.",
+			"dependencies": ["date-fns-jalali@latest", "react-day-picker@latest"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"path": "registry/new-york/jalali-calendar/page.tsx",
+					"type": "registry:page",
+					"target": "app/page.tsx"
+				},
+				{
+					"path": "registry/new-york/jalali-calendar/jalali-calendar.tsx",
+					"type": "registry:component",
+					"target": ""
+				}
+			]
+		},
+		{
 			"name": "jalali-date-picker",
+			"type": "registry:component",
+			"title": "Jalali Date Picker",
+			"description": "A Persian/Jalali date picker component with popover.",
+			"dependencies": ["date-fns-jalali@latest", "react-day-picker@latest"],
+			"registryDependencies": [
+				"button",
+				"popover",
+				"https://calendar.jbrave.ir/r/jalali-calendar.json"
+			],
+			"files": [
+				{
+					"path": "registry/new-york/jalali-date-picker/jalali-date-picker.tsx",
+					"type": "registry:component",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "jalali-date-picker-v0",
 			"type": "registry:component",
 			"title": "Jalali Date Picker",
 			"description": "A Persian/Jalali date picker component with popover.",
@@ -44,6 +83,25 @@
 		},
 		{
 			"name": "jalali-date-picker-with-range",
+			"type": "registry:component",
+			"title": "Jalali Date Picker with Range",
+			"description": "A Persian/Jalali date range picker component with popover.",
+			"dependencies": ["date-fns-jalali@latest", "react-day-picker@latest"],
+			"registryDependencies": [
+				"button",
+				"popover",
+				"https://calendar.jbrave.ir/r/jalali-calendar.json"
+			],
+			"files": [
+				{
+					"path": "registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range.tsx",
+					"type": "registry:component",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "jalali-date-picker-with-range-v0",
 			"type": "registry:component",
 			"title": "Jalali Date Picker with Range",
 			"description": "A Persian/Jalali date range picker component with popover.",

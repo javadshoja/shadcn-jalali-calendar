@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "jalali-date-picker-with-range",
+  "name": "jalali-date-picker-with-range-v0",
   "type": "registry:component",
   "title": "Jalali Date Picker with Range",
   "description": "A Persian/Jalali date range picker component with popover.",
@@ -14,6 +14,12 @@
     "https://calendar.jbrave.ir/r/jalali-calendar.json"
   ],
   "files": [
+    {
+      "path": "registry/new-york/jalali-date-picker-with-range/page.tsx",
+      "content": "import { JalaliDatePickerWithRange } from '@/registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range'\r\n\r\nexport default function Page() {\r\n\treturn (\r\n\t\t<div className='flex min-h-svh w-full items-center justify-center p-6 md:p-10'>\r\n\t\t\t<div className='w-full max-w-sm'>\r\n\t\t\t\t<JalaliDatePickerWithRange />\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t)\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/page.tsx"
+    },
     {
       "path": "registry/new-york/jalali-date-picker-with-range/jalali-date-picker-with-range.tsx",
       "content": "'use client'\r\n\r\nimport * as React from 'react'\r\nimport { addDays, format } from 'date-fns-jalali'\r\nimport { CalendarIcon } from 'lucide-react'\r\nimport { cn } from '@/lib/utils'\r\nimport { Button } from '@/components/ui/button'\r\nimport { JalaliCalendar } from '@/registry/new-york/jalali-calendar/jalali-calendar'\r\nimport {\r\n\tPopover,\r\n\tPopoverContent,\r\n\tPopoverTrigger\r\n} from '@/components/ui/popover'\r\nimport { DateRange } from 'react-day-picker'\r\n\r\nconst JalaliDatePickerWithRange = ({\r\n\tclassName\r\n}: React.HTMLAttributes<HTMLDivElement>) => {\r\n\t// Use a simpler approach to state to avoid type issues\r\n\tconst [fromDate, setFromDate] = React.useState<Date | undefined>(undefined)\r\n\tconst [toDate, setToDate] = React.useState<Date | undefined>(undefined)\r\n\r\n\tReact.useEffect(() => {\r\n\t\t// Initialize dates only on the client side\r\n\t\tif (!fromDate) {\r\n\t\t\tsetFromDate(new Date())\r\n\t\t}\r\n\t\tif (!toDate) {\r\n\t\t\tsetToDate(addDays(new Date(), 20))\r\n\t\t}\r\n\t}, [fromDate, toDate])\r\n\r\n\t// Construct our date range object\r\n\tconst dateRange = fromDate\r\n\t\t? {\r\n\t\t\t\tfrom: fromDate,\r\n\t\t\t\tto: toDate\r\n\t\t  }\r\n\t\t: undefined\r\n\r\n\t// Handle selection from the calendar\r\n\tconst handleSelect = (range: DateRange) => {\r\n\t\tif (range?.from) setFromDate(range.from)\r\n\t\tif (range?.to) setToDate(range.to)\r\n\t\telse if (range?.from && !range.to) setToDate(undefined)\r\n\t}\r\n\r\n\treturn (\r\n\t\t<div className={cn('grid gap-2', className)}>\r\n\t\t\t<Popover>\r\n\t\t\t\t<PopoverTrigger asChild>\r\n\t\t\t\t\t<Button\r\n\t\t\t\t\t\tid='date'\r\n\t\t\t\t\t\tdir='rtl'\r\n\t\t\t\t\t\tvariant='outline'\r\n\t\t\t\t\t\tclassName={cn(\r\n\t\t\t\t\t\t\t'justify-start text-left font-normal',\r\n\t\t\t\t\t\t\t!fromDate && 'text-muted-foreground'\r\n\t\t\t\t\t\t)}\r\n\t\t\t\t\t>\r\n\t\t\t\t\t\t<CalendarIcon />\r\n\t\t\t\t\t\t{fromDate ? (\r\n\t\t\t\t\t\t\ttoDate ? (\r\n\t\t\t\t\t\t\t\t<>\r\n\t\t\t\t\t\t\t\t\t{format(fromDate, 'dd LLLL y')} -{' '}\r\n\t\t\t\t\t\t\t\t\t{format(toDate, 'dd LLLL y')}\r\n\t\t\t\t\t\t\t\t</>\r\n\t\t\t\t\t\t\t) : (\r\n\t\t\t\t\t\t\t\tformat(fromDate, 'LLL dd, y')\r\n\t\t\t\t\t\t\t)\r\n\t\t\t\t\t\t) : (\r\n\t\t\t\t\t\t\t<span>انتخاب تاریخ</span>\r\n\t\t\t\t\t\t)}\r\n\t\t\t\t\t</Button>\r\n\t\t\t\t</PopoverTrigger>\r\n\t\t\t\t<PopoverContent className='w-auto p-0' align='start'>\r\n\t\t\t\t\t<JalaliCalendar\r\n\t\t\t\t\t\tmode='range'\r\n\t\t\t\t\t\tdefaultMonth={fromDate}\r\n\t\t\t\t\t\tselected={dateRange}\r\n\t\t\t\t\t\tonSelect={handleSelect}\r\n\t\t\t\t\t\tnumberOfMonths={2}\r\n\t\t\t\t\t\trequired\r\n\t\t\t\t\t/>\r\n\t\t\t\t</PopoverContent>\r\n\t\t\t</Popover>\r\n\t\t</div>\r\n\t)\r\n}\r\n\r\nexport { JalaliDatePickerWithRange }\r\n",

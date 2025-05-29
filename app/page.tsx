@@ -27,7 +27,7 @@ export default function Home() {
 					)}
 				/>
 				<ThemeMenuButton className='fixed right-[5vw] top-5 flex-1 md:right-5' />
-				<div className='flex w-full flex-col items-center rounded-lg border px-5 mt-16 backdrop-blur-md supports-[backdrop-filter]:bg-background/40 py-2 sm:py-4'>
+				<div className='flex w-full flex-col items-center rounded-lg border px-5 mt-16 backdrop-blur-md supports-[backdrop-filter]:bg-background/40 py-2 sm:py-4 lg:min-w-[944px]'>
 					<div className='grid lg:grid-cols-2 gap-4 w-full'>
 						<div className='flex items-start flex-col py-2 w-full'>
 							<h1 className='mb-3 w-full text-3xl font-bold text-center sm:w-96'>

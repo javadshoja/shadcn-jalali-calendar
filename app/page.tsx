@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils'
 
 export default function Home() {
 	return (
-		<div className='relative lg:h-svh flex flex-col gap-y-14 overflow-y-scroll'>
-			<main className='relative mx-auto flex max-w-[90vw] items-center justify-center overflow-hidden sm:max-w-screen-lg sm:p-10'>
+		<div className='relative lg:h-svh flex flex-col gap-y-14'>
+			<main className='relative mx-auto flex max-w-[90vw] items-center justify-center overflow-hidden sm:max-w-screen-lg sm:p-10 lg:h-full'>
 				<GridPattern
 					squares={[
 						[4, 4],
@@ -52,7 +52,7 @@ export default function Home() {
 				</div>
 			</main>
 
-			<footer className='flex w-full mb-0 mt-auto pb-4 px-3'>
+			<footer className='flex w-full mb-0 mt-auto pb-4 px-3 h-9'>
 				<p className='lg:text-center text-sm text-muted-foreground mx-auto'>
 					ساخته شده با ❤️ توسط{' '}
 					<a

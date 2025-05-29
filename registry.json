@@ -27,6 +27,11 @@
 			"registryDependencies": ["button"],
 			"files": [
 				{
+					"path": "registry/layout.tsx",
+					"type": "registry:component",
+					"target": "app/layout.tsx"
+				},
+				{
 					"path": "registry/new-york/jalali-calendar/page.tsx",
 					"type": "registry:page",
 					"target": "app/page.tsx"
@@ -70,6 +75,11 @@
 			],
 			"files": [
 				{
+					"path": "registry/layout.tsx",
+					"type": "registry:component",
+					"target": "app/layout.tsx"
+				},
+				{
 					"path": "registry/new-york/jalali-date-picker/page.tsx",
 					"type": "registry:page",
 					"target": "app/page.tsx"
@@ -112,6 +122,11 @@
 				"https://calendar.jbrave.ir/r/jalali-calendar.json"
 			],
 			"files": [
+				{
+					"path": "registry/layout.tsx",
+					"type": "registry:component",
+					"target": "app/layout.tsx"
+				},
 				{
 					"path": "registry/new-york/jalali-date-picker-with-range/page.tsx",
 					"type": "registry:page",

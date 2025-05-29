@@ -13,6 +13,12 @@
   ],
   "files": [
     {
+      "path": "registry/layout.tsx",
+      "content": "import { Vazirmatn } from 'next/font/google'\r\n\r\nconst vazirmatn = Vazirmatn({\r\n\tvariable: '--font-vazirmatn',\r\n\tsubsets: ['arabic']\r\n})\r\n\r\nexport default function RootLayout({\r\n\tchildren\r\n}: Readonly<{\r\n\tchildren: React.ReactNode\r\n}>) {\r\n\treturn (\r\n\t\t<html lang='fa' dir='rtl'>\r\n\t\t\t<body\r\n\t\t\t\tclassName={`${vazirmatn.variable} ${vazirmatn.className} antialiased`}\r\n\t\t\t>\r\n\t\t\t\t<div className='transition-property: transform, border-radius; transition-duration: 0.5s; transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);'>\r\n\t\t\t\t\t{children}\r\n\t\t\t\t</div>\r\n\t\t\t</body>\r\n\t\t</html>\r\n\t)\r\n}\r\n",
+      "type": "registry:component",
+      "target": "app/layout.tsx"
+    },
+    {
       "path": "registry/new-york/jalali-calendar/page.tsx",
       "content": "import { JalaliCalendar } from './jalali-calendar'\r\n\r\nexport default function Page() {\r\n\treturn (\r\n\t\t<div className='flex min-h-svh w-full items-center justify-center p-6 md:p-10'>\r\n\t\t\t<div className='w-full max-w-sm'>\r\n\t\t\t\t<JalaliCalendar />\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t)\r\n}\r\n",
       "type": "registry:page",
